@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Konva from 'konva';
 import RectangleComponent from './rectangle';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 let id = 1;
 
@@ -215,9 +216,12 @@ const Arena = () => {
                 <div className='square' onTouchStart={e => dragUrl.current = 'rect'} draggable="true" onDragStart={(e) => {
                     dragUrl.current = 'rect';
                 }}>Drag me!</div>
-                <Button variant="outlined" onClick={() => alignToTop()}>Align items to top</Button>
-                <Button variant="outlined" onClick={() => clearCanvas()}>Clear all</Button>
-                <Button variant="outlined" onClick={() => setSelectionMode(!isInSelectMode)}>{isInSelectMode ? 'Stop selection' : 'Select Items'}</Button>
+                <ButtonGroup variant="text" aria-label="text button group">
+                    <Button variant="outlined" onClick={() => alignToTop()}>Align items to top</Button>
+                    <Button variant="outlined" onClick={() => clearCanvas()}>Clear all</Button>
+                    <Button variant="outlined" onClick={() => setSelectionMode(!isInSelectMode)}>{isInSelectMode ? 'Stop selection' : 'Select Items'}</Button>
+                </ButtonGroup>
+
 
             </Container>
 
